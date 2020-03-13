@@ -91,8 +91,23 @@
                 ['username1' => 'Alex'],
                 ['username2' => 'Billy']
             ]);
-
+            
+            $this->assertIsString('string', $collection->toJson());
             $this->assertEquals('[{"username1":"Alex"},{"username2":"Billy"}]', $collection->toJson());
+        }
+
+        /** @test */
+        public function json_encoding_a_collection_object_returns_json()
+        {
+            $collection = new \App\Support\Collection([
+                ['username1' => 'Alex'],
+                ['username2' => 'Billy']
+            ]);
+            
+            $encoded = json_encode($collection);
+
+            $this->assertIsString('string', $encoded);
+            $this->assertEquals('[{"username1":"Alex"},{"username2":"Billy"}]', $encoded);
         }
     }
 ?>
