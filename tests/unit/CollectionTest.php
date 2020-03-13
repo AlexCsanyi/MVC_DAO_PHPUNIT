@@ -83,5 +83,16 @@
             $this->assertEquals(3, $collection->count());
             $this->assertCount(3, $collection->get());
         }
+
+        /** @test */
+        public function returns_json_encoded_items()
+        {
+            $collection = new \App\Support\Collection([
+                ['username1' => 'Alex'],
+                ['username2' => 'Billy']
+            ]);
+
+            $this->assertEquals('[{"username1":"Alex"},{"username2":"Billy"}]', $collection->toJson());
+        }
     }
 ?>

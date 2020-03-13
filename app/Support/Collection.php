@@ -36,5 +36,10 @@
         {
             return $this->add($collection->get());
         }
+
+        public function toJson()
+        {
+            return json_encode($this->items);
+        }
     }
 ?>
