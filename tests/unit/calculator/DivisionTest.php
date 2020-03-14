@@ -10,13 +10,13 @@
             $this->assertEquals(50, $division->calculate());
         }
 
-        // /** @test */
-        // public function no_operands_given_throws_exception_when_calculating()
-        // {
-        //     $this->expectException(\App\Calculator\Exceptions\NoOperandsException::class);
+        /** @test */
+        public function no_operands_given_throws_exception_when_calculating()
+        {
+            $this->expectException(\App\Calculator\Exceptions\NoOperandsException::class);
 
-        //     $addition = new \App\Calculator\Addition;
-        //     $addition->calculate();
-        // }
+            $division = new \App\Calculator\Division;
+            $division->calculate();
+        }
      }
 ?>
