@@ -18,5 +18,14 @@
             $division = new \App\Calculator\Division;
             $division->calculate();
         }
+
+        /** @test */
+        public function removes_division_by_zero_operands()
+        {
+            $division = new \App\Calculator\Division;
+            $division->setOperands([10,0,0,5]);
+
+            $this->assertEquals(2, $division->calculate());
+        }
      }
 ?>
